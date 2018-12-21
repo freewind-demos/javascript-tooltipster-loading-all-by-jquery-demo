@@ -3,7 +3,6 @@
 </head>
 <body>
 
-<a id="bbb" href="#" title="This is link3">Link3 with id 'bbb'</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script>
@@ -11,8 +10,12 @@
   var $style = $('<link rel="stylesheet" type="text/css" />').attr('href', 'https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css');
   $('head').append($style);
 
+  var $link = $(
+      '<a id="my-tooltipster" href="#" title="hello, tooltipster!" style="position:absolute;left: 100px;top:200px;width:400px;height:200px;font-size:30px;background-color:#EEE">My Link for tooltipster</a>');
+  $('body').append($link);
+
   $.getScript('https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.js', function () {
-    $('a').tooltipster();
+    $('#my-tooltipster').tooltipster();
   });
 
 </script>
