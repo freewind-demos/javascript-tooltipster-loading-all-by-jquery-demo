@@ -5,9 +5,16 @@
 
 <a id="bbb" href="#" title="This is link3">Link3 with id 'bbb'</a>
 
-<link rel="stylesheet" href="./node_modules/tooltipster/dist/css/tooltipster.bundle.css">
-<script src="./node_modules/jquery/dist/jquery.js"></script>
-<script src="./node_modules/tooltipster/dist/js/tooltipster.bundle.js"></script>
-<script src="./index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script>
+
+  var $style = $('<link rel="stylesheet" type="text/css" />').attr('href', 'https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css');
+  $('head').append($style);
+
+  $.getScript('https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.js', function () {
+    $('a').tooltipster();
+  });
+
+</script>
 </body>
 </html>
